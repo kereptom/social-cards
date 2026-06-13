@@ -1,0 +1,119 @@
+<!doctype html><html lang="cs"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>Sociální karty a OG obrázky</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='13' height='13' x='2.5' y='2.5' rx='3' fill='%238b7bff'/%3E%3Crect width='13' height='13' x='16.5' y='2.5' rx='3' fill='%23aef03a'/%3E%3Crect width='13' height='13' x='2.5' y='16.5' rx='3' fill='%23ff7a3c'/%3E%3Crect width='13' height='13' x='16.5' y='16.5' rx='3' fill='%23e0249a'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fbfbfd;--card:#fff;--ink:#1d1d1f;--ink2:#6e6e73;--ink3:#86868b;--line:#e6e6eb;--blue:#0071e3}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Inter","Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;line-height:1.47}
+.nav{position:sticky;top:0;z-index:50;background:rgba(251,251,253,.82);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+.nav .in{max-width:1200px;margin:0 auto;padding:0 22px;height:52px;display:flex;align-items:center;justify-content:space-between}
+.nav .brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:16px}
+.nav .logo{display:grid;grid-template-columns:1fr 1fr;gap:2px;width:20px;height:20px}.nav .logo i{border-radius:3px}
+.nav a{color:var(--ink2);text-decoration:none;font-size:14px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 22px}
+.hero{text-align:center;padding:92px 0 26px}
+.hero h1{font-size:clamp(42px,7vw,84px);font-weight:800;letter-spacing:-.035em;line-height:1.04}
+.hero .grad{background:linear-gradient(110deg,#8b7bff,#e0249a 42%,#ff7a3c 74%,#aef03a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{margin:22px auto 0;max-width:640px;font-size:clamp(18px,2.4vw,22px);color:var(--ink2)}
+.note{display:inline-flex;gap:8px;margin-top:24px;background:#f3eefe;color:#5b3a9a;border:1px solid #e2d6fb;border-radius:999px;padding:8px 16px;font-size:13.5px}
+.stats{display:flex;justify-content:center;flex-wrap:wrap;gap:34px;margin-top:30px;color:var(--ink2);font-size:14px}
+.stats b{display:block;font-size:30px;font-weight:700;color:var(--ink)}
+.filters{display:flex;justify-content:center;gap:8px;margin:40px 0 0;flex-wrap:wrap}
+.filters button{font:inherit;font-size:14px;color:var(--ink2);background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 16px;cursor:pointer}
+.filters button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px;padding:30px 0}
+.card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;text-decoration:none;color:inherit;transition:transform .22s,box-shadow .22s}
+.card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,.10)}
+.thumb{aspect-ratio:16/10;background:#1a1a22;display:flex;align-items:center;justify-content:center;padding:14px}
+.thumb img{max-width:100%;max-height:100%;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.meta{padding:14px 16px 16px}.name{font-weight:600;font-size:17px}
+.tags{display:flex;gap:6px;margin-top:10px;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink3)}
+.tags span{border:1px solid var(--line);border-radius:6px;padding:3px 8px}
+.how{border-top:1px solid var(--line);margin-top:24px;padding:60px 0 70px;text-align:center;color:var(--ink2)}
+.how h2{color:var(--ink);font-size:clamp(26px,4vw,36px);font-weight:700;margin-bottom:14px}
+.how code{font-family:ui-monospace,Menlo,monospace;font-size:.85em;background:#f0f0f3;border-radius:5px;padding:2px 6px}
+.how a{color:var(--blue);text-decoration:none}
+footer{border-top:1px solid var(--line);padding:24px 0 50px;color:var(--ink3);font-size:12.5px;text-align:center}
+</style></head><body>
+<div class="nav"><div class="in"><div class="brand"><span class="logo"><i style="background:#8b7bff"></i><i style="background:#aef03a"></i><i style="background:#ff7a3c"></i><i style="background:#e0249a"></i></span> Sociální karty</div><a href="#how">Jak to použít</a></div></div>
+<div class="wrap"><section class="hero"><h1>HTML dovnitř.<br><span class="grad">16 obrázků ven.</span></h1>
+<p>Karty pro sociální sítě a OG náhledy. Návrh v HTML, export do PNG ve čtyřech formátech.</p>
+<div class="note">⚠︎ Ukázkový (dummy) obsah. Texty uprav v <code>build/content.py</code>.</div>
+<div class="stats"><div><b>16</b>karet</div><div><b>6</b>designů</div><div><b>4</b>formáty</div><div><b>PNG</b>export</div></div>
+<div class="filters"><button class="on" data-f="all">Vše</button><button data-f="og">OG</button><button data-f="sq">Čtverec</button><button data-f="story">Story</button><button data-f="wide">Wide</button></div>
+</section>
+<div class="grid" id="grid">
+      <a class="card" href="templates/01-quote-og/index.html" data-fmt="og">
+        <div class="thumb"><img src="gallery/shots/01.png" alt="Citát (OG)" loading="lazy"></div>
+        <div class="meta"><div class="name">Citát (OG)</div>
+          <div class="tags"><span>quote</span><span>1200x630 OG</span></div></div></a>
+      <a class="card" href="templates/02-stat-square/index.html" data-fmt="sq">
+        <div class="thumb"><img src="gallery/shots/02.png" alt="Statistika (čtverec)" loading="lazy"></div>
+        <div class="meta"><div class="name">Statistika (čtverec)</div>
+          <div class="tags"><span>stat</span><span>1080x1080 čtverec</span></div></div></a>
+      <a class="card" href="templates/03-announce-og/index.html" data-fmt="og">
+        <div class="thumb"><img src="gallery/shots/03.png" alt="Oznámení (OG)" loading="lazy"></div>
+        <div class="meta"><div class="name">Oznámení (OG)</div>
+          <div class="tags"><span>headline</span><span>1200x630 OG</span></div></div></a>
+      <a class="card" href="templates/04-event-story/index.html" data-fmt="story">
+        <div class="thumb"><img src="gallery/shots/04.png" alt="Událost (story)" loading="lazy"></div>
+        <div class="meta"><div class="name">Událost (story)</div>
+          <div class="tags"><span>event</span><span>1080x1920 story</span></div></div></a>
+      <a class="card" href="templates/05-tips-square/index.html" data-fmt="sq">
+        <div class="thumb"><img src="gallery/shots/05.png" alt="Tipy (čtverec)" loading="lazy"></div>
+        <div class="meta"><div class="name">Tipy (čtverec)</div>
+          <div class="tags"><span>list</span><span>1080x1080 čtverec</span></div></div></a>
+      <a class="card" href="templates/06-promo-square/index.html" data-fmt="sq">
+        <div class="thumb"><img src="gallery/shots/06.png" alt="Akce (čtverec)" loading="lazy"></div>
+        <div class="meta"><div class="name">Akce (čtverec)</div>
+          <div class="tags"><span>promo</span><span>1080x1080 čtverec</span></div></div></a>
+      <a class="card" href="templates/07-blogpost-og/index.html" data-fmt="og">
+        <div class="thumb"><img src="gallery/shots/07.png" alt="Článek (OG)" loading="lazy"></div>
+        <div class="meta"><div class="name">Článek (OG)</div>
+          <div class="tags"><span>headline</span><span>1200x630 OG</span></div></div></a>
+      <a class="card" href="templates/08-testimonial-square/index.html" data-fmt="sq">
+        <div class="thumb"><img src="gallery/shots/08.png" alt="Reference (čtverec)" loading="lazy"></div>
+        <div class="meta"><div class="name">Reference (čtverec)</div>
+          <div class="tags"><span>quote</span><span>1080x1080 čtverec</span></div></div></a>
+      <a class="card" href="templates/09-rating-og/index.html" data-fmt="og">
+        <div class="thumb"><img src="gallery/shots/09.png" alt="Hodnocení (OG)" loading="lazy"></div>
+        <div class="meta"><div class="name">Hodnocení (OG)</div>
+          <div class="tags"><span>stat</span><span>1200x630 OG</span></div></div></a>
+      <a class="card" href="templates/10-hiring-square/index.html" data-fmt="sq">
+        <div class="thumb"><img src="gallery/shots/10.png" alt="Nábor (čtverec)" loading="lazy"></div>
+        <div class="meta"><div class="name">Nábor (čtverec)</div>
+          <div class="tags"><span>headline</span><span>1080x1080 čtverec</span></div></div></a>
+      <a class="card" href="templates/11-webinar-og/index.html" data-fmt="og">
+        <div class="thumb"><img src="gallery/shots/11.png" alt="Webinář (OG)" loading="lazy"></div>
+        <div class="meta"><div class="name">Webinář (OG)</div>
+          <div class="tags"><span>event</span><span>1200x630 OG</span></div></div></a>
+      <a class="card" href="templates/12-flashsale-story/index.html" data-fmt="story">
+        <div class="thumb"><img src="gallery/shots/12.png" alt="Flash sale (story)" loading="lazy"></div>
+        <div class="meta"><div class="name">Flash sale (story)</div>
+          <div class="tags"><span>promo</span><span>1080x1920 story</span></div></div></a>
+      <a class="card" href="templates/13-launch-wide/index.html" data-fmt="wide">
+        <div class="thumb"><img src="gallery/shots/13.png" alt="Uvedení (wide)" loading="lazy"></div>
+        <div class="meta"><div class="name">Uvedení (wide)</div>
+          <div class="tags"><span>headline</span><span>1600x900 wide</span></div></div></a>
+      <a class="card" href="templates/14-howto-story/index.html" data-fmt="story">
+        <div class="thumb"><img src="gallery/shots/14.png" alt="Návod (story)" loading="lazy"></div>
+        <div class="meta"><div class="name">Návod (story)</div>
+          <div class="tags"><span>list</span><span>1080x1920 story</span></div></div></a>
+      <a class="card" href="templates/15-editorial-wide/index.html" data-fmt="wide">
+        <div class="thumb"><img src="gallery/shots/15.png" alt="Editorial (wide)" loading="lazy"></div>
+        <div class="meta"><div class="name">Editorial (wide)</div>
+          <div class="tags"><span>quote</span><span>1600x900 wide</span></div></div></a>
+      <a class="card" href="templates/16-milestone-story/index.html" data-fmt="story">
+        <div class="thumb"><img src="gallery/shots/16.png" alt="Milník (story)" loading="lazy"></div>
+        <div class="meta"><div class="name">Milník (story)</div>
+          <div class="tags"><span>stat</span><span>1080x1920 story</span></div></div></a>
+</div>
+<section class="how" id="how"><h2>Jak z toho udělat vlastní obrázek</h2>
+<p>Uprav texty v <code>build/content.py</code>, spusť <code>python3 build/build.py</code> a vyrenderuj přes <code>node shot.mjs</code> (Playwright). Hotové PNG je v <code>templates/&lt;slug&gt;/card.png</code>.<br>Každá karta je čisté HTML v přesných pixelech, sazba v jednotkách <code>vmin</code> se přizpůsobí formátu.</p>
+<p style="margin-top:20px"><a href="README.md">README</a> &middot; <a href="https://github.com/kereptom/social-cards">GitHub</a></p></section>
+</div>
+<footer>Sociální karty a OG obrázky &middot; HTML do PNG &middot; ukázkový obsah</footer>
+<script>const g=document.getElementById('grid');document.querySelectorAll('.filters button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.filters button').forEach(x=>x.classList.remove('on'));b.classList.add('on');const f=b.dataset.f;g.querySelectorAll('.card').forEach(c=>c.style.display=(f==='all'||c.dataset.fmt===f)?'':'none');});</script>
+</body></html>
