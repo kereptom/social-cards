@@ -38,7 +38,27 @@ def d_promo(c):
             f'<div class="bignum">{e(c["big"])}</div><h1>{c["head"]}</h1>'
             f'<div class="code">{e(c.get("code",""))}</div>'
             f'<div class="foot"><span class="brand">{e(c["brand"])}</span><span class="handle">{e(c.get("handle",""))}</span></div>')
-DESIGN = {"headline": d_headline, "quote": d_quote, "stat": d_stat, "event": d_event, "list": d_list, "promo": d_promo}
+def d_profile(c):
+    return (f'<div class="avatar">{e(c["initials"])}</div><div class="pname">{e(c["name"])}</div>'
+            f'<div class="prole">{e(c.get("role",""))}</div>'
+            f'<div class="foot"><span class="brand">{e(c["brand"])}</span><span class="handle">{e(c.get("handle",""))}</span></div>')
+def d_checklist(c):
+    items = "".join(f'<li><span class="ck">&#10003;</span><span>{e(x)}</span></li>' for x in c["items"])
+    return (f'<span class="eyebrow">{e(c.get("eyebrow",""))}</span><h1>{c["head"]}</h1>'
+            f'<ul class="check">{items}</ul><div class="foot"><span class="brand">{e(c["brand"])}</span></div>')
+def d_countdown(c):
+    return (f'<span class="eyebrow">{e(c.get("eyebrow",""))}</span><div class="cd-num">{e(c["num"])}</div>'
+            f'<div class="cd-unit">{e(c.get("unit",""))}</div><h1>{c["head"]}</h1>'
+            f'<div class="foot"><span class="brand">{e(c["brand"])}</span><span class="handle">{e(c.get("handle",""))}</span></div>')
+def d_compare(c):
+    return (f'<span class="eyebrow">{e(c.get("eyebrow",""))}</span>'
+            f'<div class="cmp"><div class="cmp-col"><div class="cmp-h">{e(c["a"][0])}</div><div class="cmp-v">{e(c["a"][1])}</div></div>'
+            f'<div class="cmp-vs">vs</div>'
+            f'<div class="cmp-col"><div class="cmp-h">{e(c["b"][0])}</div><div class="cmp-v">{e(c["b"][1])}</div></div></div>'
+            f'<h1 style="font-size:4.6vmin">{c["head"]}</h1>'
+            f'<div class="foot"><span class="brand">{e(c["brand"])}</span></div>')
+DESIGN = {"headline": d_headline, "quote": d_quote, "stat": d_stat, "event": d_event, "list": d_list, "promo": d_promo,
+    "profile": d_profile, "checklist": d_checklist, "countdown": d_countdown, "compare": d_compare}
 
 PAGE = """<!doctype html><html lang="{lang}"><head><meta charset="utf-8">
 <title>{title}</title>
@@ -74,6 +94,19 @@ blockquote{{font-family:var(--display);font-weight:600;font-size:6.6vmin;line-he
 .list .n{{flex:none;width:7vmin;height:7vmin;border-radius:50%;background:var(--c-1);color:#fff;font-family:var(--display);font-weight:800;display:flex;align-items:center;justify-content:center;font-size:3.4vmin}}
 .badge{{align-self:flex-start;background:var(--c-1);color:#fff;font-weight:700;font-size:2.8vmin;letter-spacing:.1em;text-transform:uppercase;padding:1.4vmin 3vmin;border-radius:999px;margin-bottom:3vmin}}
 .code{{align-self:flex-start;margin-top:3vmin;font-family:"JetBrains Mono",monospace;font-size:3.4vmin;font-weight:600;border:0.5vmin dashed var(--c-1);color:var(--c-1);padding:1.6vmin 3vmin;border-radius:1.4vmin}}
+.avatar{{width:26vmin;height:26vmin;border-radius:50%;background:var(--c-1);color:#fff;font-family:var(--display);font-weight:800;font-size:9vmin;display:flex;align-items:center;justify-content:center;margin-bottom:4vmin}}
+.pname{{font-family:var(--display);font-weight:800;font-size:7vmin;line-height:1.05}}
+.prole{{font-size:3.2vmin;color:var(--sub);margin-top:1.4vmin}}
+.check{{list-style:none;margin-top:4vmin;display:flex;flex-direction:column;gap:2.8vmin}}
+.check li{{display:flex;gap:2.4vmin;align-items:center;font-size:4vmin;font-weight:600}}
+.check .ck{{flex:none;width:5.4vmin;height:5.4vmin;border-radius:1.4vmin;background:var(--c-1);color:#fff;display:flex;align-items:center;justify-content:center;font-size:3vmin;font-weight:800}}
+.cd-num{{font-family:var(--display);font-weight:800;font-size:34vmin;line-height:.82;color:var(--c-1)}}
+.cd-unit{{font-size:4vmin;font-weight:600;color:var(--sub);margin:1vmin 0 3vmin}}
+.cmp{{display:flex;align-items:center;gap:3vmin;margin:3vmin 0}}
+.cmp-col{{flex:1;text-align:center}}
+.cmp-h{{font-family:var(--display);font-weight:800;font-size:6.4vmin;color:var(--c-1)}}
+.cmp-v{{font-size:3vmin;color:var(--sub);margin-top:1vmin}}
+.cmp-vs{{font-family:var(--display);font-weight:800;font-size:5vmin;color:var(--sub)}}
 </style></head><body>
 <div class="card"><div class="blob b1"></div><div class="blob b2"></div>{inner}</div>
 </body></html>"""

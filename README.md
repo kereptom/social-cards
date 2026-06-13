@@ -1,6 +1,6 @@
 # Sociální karty a OG obrázky
 
-Knihovna **16 karet pro sociální sítě** a OG náhledy. Návrh je čisté HTML
+Knihovna **30 karet pro sociální sítě** a OG náhledy. Návrh je čisté HTML
 v přesných pixelech, render do PNG přes Playwright. Šest designů ve čtyřech
 formátech (OG 1200x630, čtverec 1080x1080, story 1080x1920, wide 1600x900).
 
